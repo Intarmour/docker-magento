@@ -20,22 +20,22 @@
 
 View Dockerfiles for the latest tags:
 
-- [intarmour/magento-nginx (Docker Hub)](https://hub.docker.com/intarmour/magento-nginx/)
+- [intarmour/magento-nginx (Docker Hub)](https://hub.docker.com/r/intarmour/magento-nginx/)
   - [`1.18`, `1.18-8`](images/nginx/1.18)
-- [intarmour/magento-php (Docker Hub)](https://hub.docker.com/intarmour/magento-php/)
+- [intarmour/magento-php (Docker Hub)](https://hub.docker.com/r/intarmour/magento-php/)
   - [`8.1-fpm`](images/php/8.1)
   - [`8.2-fpm`](images/php/8.2)
   - [`8.3-fpm`, `8.3-fpm-develop`](images/php/8.3)
-- [intarmour/magento-opensearch (Docker Hub)](https://hub.docker.com/intarmour/magento-opensearch/)
+- [intarmour/magento-opensearch (Docker Hub)](https://hub.docker.com/r/intarmour/magento-opensearch/)
     - [`1.2`](images/opensearch/1.2)
     - [`2.5`, `2.5-1`](images/opensearch/2.5)
-- [intarmour/magento-elasticsearch (Docker Hub)](https://hub.docker.com/intarmour/magento-elasticsearch/)
+- [intarmour/magento-elasticsearch (Docker Hub)](https://hub.docker.com/r/intarmour/magento-elasticsearch/)
   - [`7.17`](images/elasticsearch/7.17)
   - [`8.4`,](images/elasticsearch/8.4)
-- [intarmour/magento-rabbitmq (Docker Hub)](https://hub.docker.com/intarmour/magento-rabbitmq/)
+- [intarmour/magento-rabbitmq (Docker Hub)](https://hub.docker.com/r/intarmour/magento-rabbitmq/)
   - [`3.9``](images/rabbitmq/3.9)
   - [`3.11`](images/rabbitmq/3.11)
-- [intarmour/ssh (Docker Hub)](https://hub.docker.com/intarmour/magento-ssh/)
+- [intarmour/ssh (Docker Hub)](https://hub.docker.com/r/intarmour/magento-ssh/)
   - [`latest`](images/ssh)
 
 ## Usage
@@ -63,7 +63,7 @@ mkdir -p ~/Sites/magento
 cd $_
 
 # Run this automated one-liner from the directory you want to install your project.
-curl -s https://raw.githubusercontent.com/intarmour/docker-magento/master/lib/onelinesetup | bash -s -- magento.test 2.4.6-p4 community
+curl -s https://raw.githubusercontent.com/r/intarmour/docker-magento/master/lib/onelinesetup | bash -s -- magento.test 2.4.6-p4 community
 ```
 
 The `magento.test` above defines the hostname to use, and the `2.4.6-p4` defines the Magento version to install. Note that since we need a write to `/etc/hosts` for DNS resolution, you will be prompted for your system password during setup.
@@ -91,7 +91,7 @@ mkdir -p ~/Sites/magento
 cd $_
 
 # Download the Docker Compose template:
-curl -s https://raw.githubusercontent.com/intarmour/docker-magento/master/lib/template | bash
+curl -s https://raw.githubusercontent.com/r/intarmour/docker-magento/master/lib/template | bash
 
 # Download the version of Magento you want to use with:
 bin/download 2.4.6-p4 community
@@ -131,7 +131,7 @@ mkdir -p ~/Sites/magento
 cd $_
 
 # Download the Docker Compose template:
-curl -s https://raw.githubusercontent.com/intarmour/docker-magento/master/lib/template | bash
+curl -s https://raw.githubusercontent.com/r/intarmour/docker-magento/master/lib/template | bash
 
 # Take a backup of your existing database:
 bin/mysqldump > ~/Sites/existing/magento.sql
@@ -167,8 +167,8 @@ open https://magento.test
 
 ### Elasticsearch vs OpenSearch
 OpenSearch is set as the default search engine when setting up this project. Follow the instructions below if you want to use Elasticsearch instead:
-1. Comment out or remove the `opensearch` container in both the [`compose.yaml`](https://github.com/intarmour/docker-magento/blob/master/compose/compose.yaml#L55-L66) and [`compose.healthcheck.yaml`](https://github.com/intarmour/docker-magento/blob/master/compose/compose.healthcheck.yaml#L38-L43) files
-2. Uncomment the `elasticsearch` container in both the [`compose.yaml`](https://github.com/intarmour/docker-magento/blob/master/compose/compose.yaml#L70-L81) and [`compose.healthcheck.yaml`](https://github.com/intarmour/docker-magento/blob/master/compose/compose.healthcheck.yaml#L45-L50) files
+1. Comment out or remove the `opensearch` container in both the [`compose.yaml`](https://github.com/r/intarmour/docker-magento/blob/master/compose/compose.yaml#L55-L66) and [`compose.healthcheck.yaml`](https://github.com/r/intarmour/docker-magento/blob/master/compose/compose.healthcheck.yaml#L38-L43) files
+2. Uncomment the `elasticsearch` container in both the [`compose.yaml`](https://github.com/r/intarmour/docker-magento/blob/master/compose/compose.yaml#L70-L81) and [`compose.healthcheck.yaml`](https://github.com/r/intarmour/docker-magento/blob/master/compose/compose.healthcheck.yaml#L45-L50) files
 3. Update the `bin/setup-install` command to use the Elasticsearch ratther than OpenSearch. Change:
 
 ```
@@ -222,7 +222,7 @@ It is recommended to keep your root docker config files in one repository, and y
 - `bin/fixowns`: This will fix filesystem ownerships within the container.
 - `bin/fixperms`: This will fix filesystem permissions within the container.
 - `bin/grunt`: Run the grunt binary. Ex. `bin/grunt exec`
-- `bin/install-php-extensions`: Install PHP extension in the container. Ex. `bin/install-php-extensions sourceguardian`
+- `bin/r/install-php-extensions`: Install PHP extension in the container. Ex. `bin/r/install-php-extensions sourceguardian`
 - `bin/log`: Monitor the Magento log files. Pass no params to tail all files. Ex. `bin/log debug.log`
 - `bin/magento`: Run the Magento CLI. Ex: `bin/magento cache:flush`
 - `bin/magento-version`: Determine the Magento version installed in the current environment.
@@ -325,7 +325,7 @@ bin/mysqldump > magento.sql
 
 ### Composer Authentication
 
-First setup Magento Marketplace authentication (details in the [DevDocs](http://devdocs.magento.com/guides/v2.0/install-gde/prereq/connect-auth.html)).
+First setup Magento Marketplace authentication (details in the [DevDocs](http://devdocs.magento.com/guides/v2.0/r/install-gde/prereq/connect-auth.html)).
 
 Copy `src/auth.json.sample` to `src/auth.json`. Then, update the username and password values with your Magento public and private keys, respectively. Finally, copy the file to the container by running `bin/copytocontainer auth.json`.
 
@@ -361,18 +361,18 @@ PhpMyAdmin is built into the `compose.dev.yaml` file. Simply open `http://localh
 
 ### Xdebug & VS Code
 
-Install and enable the PHP Debug extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug).
+Install and enable the PHP Debug extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/r/items?itemName=felixfbecker.php-debug).
 
-Otherwise, this project now automatically sets up Xdebug support with VS Code. If you wish to set this up manually, please see the [`.vscode/launch.json`](https://github.com/intarmour/docker-magento/blame/master/compose/.vscode/launch.json) file.
+Otherwise, this project now automatically sets up Xdebug support with VS Code. If you wish to set this up manually, please see the [`.vscode/launch.json`](https://github.com/r/intarmour/docker-magento/blame/master/compose/.vscode/launch.json) file.
 
 ### Xdebug & VS Code in a WSL2 environment
 
-Install and enable the PHP Debug extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=felixfbecker.php-debug).
+Install and enable the PHP Debug extension from the [Visual Studio Marketplace](https://marketplace.visualstudio.com/r/items?itemName=felixfbecker.php-debug).
 
-Otherwise, this project now automatically sets up Xdebug support with VS Code. If you wish to set this up manually, please see the [`.vscode/launch.json`](https://github.com/intarmour/docker-magento/blame/master/compose/.vscode/launch.json) file.
+Otherwise, this project now automatically sets up Xdebug support with VS Code. If you wish to set this up manually, please see the [`.vscode/launch.json`](https://github.com/r/intarmour/docker-magento/blame/master/compose/.vscode/launch.json) file.
 
 1. In VS Code, make sure that it's running in a WSL window, rather than in the default window.
-2. Install the [`PHP Debug`](https://marketplace.visualstudio.com/items?itemName=xdebug.php-debug) extension on VS Code.
+2. Install the [`PHP Debug`](https://marketplace.visualstudio.com/r/items?itemName=xdebug.php-debug) extension on VS Code.
 3. Create a new configuration file inside the project. Go to the `Run and Debug` section in VS Code, then click on `create a launch.json file`.
 4. Attention to the following configs inside the file:
     * The port must be the same as the port on the xdebug.ini file.
@@ -455,7 +455,7 @@ Otherwise, this project now automatically sets up Xdebug support with VS Code. I
     * For IDE key, enter `PHPSTORM`. This value should match the IDE Key value set by the Chrome Xdebug Helper.
     * Click OK to finish setting up the remote debugger in PHPStorm.
 
-7. Open up `pub/index.php` and set a breakpoint near the end of the file.
+7. Open up `pub/r/index.php` and set a breakpoint near the end of the file.
 
     * Start the debugger with `Run > Debug 'magento.test'`, then open up a web browser.
     * Ensure the Chrome Xdebug helper is enabled by clicking on it and selecting Debug. The icon should turn bright green.
@@ -475,7 +475,7 @@ bin/copyfromcontainer --all
 
 ### Linux
 
-Running Docker on Linux should be pretty straight-forward. Note that you need to run some [post install commands](https://docs.docker.com/install/linux/linux-postinstall/) as well as [installing Docker Compose](https://docs.docker.com/compose/install/) before continuing. These steps are taken care of automatically with Docker Desktop, but not on Linux.
+Running Docker on Linux should be pretty straight-forward. Note that you need to run some [post install commands](https://docs.docker.com/r/install/linux/linux-postinstall/) as well as [installing Docker Compose](https://docs.docker.com/compose/r/install/) before continuing. These steps are taken care of automatically with Docker Desktop, but not on Linux.
 
 Copy `compose.dev-linux.yaml` to `compose.dev.yaml` before installing Magento to take advantage of this setup.
 
@@ -530,7 +530,7 @@ bin/root blackfire-agent --register --server-id={YOUR_SERVER_ID} --server-token=
 Next, open up the `bin/start` helper script and uncomment the line:
 
 ```
-#bin/root /etc/init.d/blackfire-agent start
+#bin/root /etc/r/init.d/blackfire-agent start
 ```
 
 Finally, restart the containers with `bin/restart`. After doing so, everything is now configured and you can use a browser extension to profile your Magento store with Blackfire.
