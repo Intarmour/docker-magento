@@ -6,6 +6,8 @@
 
 ## Table of contents
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/f089c769c7f642ac914d9ea7dd374507)](https://app.codacy.com/gh/Intarmour/docker-magento?utm_source=github.com&utm_medium=referral&utm_content=Intarmour/docker-magento&utm_campaign=Badge_Grade)
+
 - [Docker Hub](#docker-hub)
 - [Usage](#usage)
 - [Prerequisites](#prerequisites)
