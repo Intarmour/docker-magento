@@ -1,7 +1,13 @@
-<h1 align="center">intarmour/docker-magento</h1>
+<h1 align="center">Intarmour Docker Configuration for Magento 2.4.x</h1>
 
 <div align="center">
-  <p>Intarmour Docker Configuration for Magento 2.4.x</p>
+  <p>The "Intarmour/docker-magento" GitHub repository provides a comprehensive Docker configuration specifically designed for Magento 2.4.x. This setup is crafted to streamline the process of developing and deploying Magento-based e-commerce platforms, ensuring an efficient and scalable environment for developers. It includes configurations for various services essential for a Magento system, such as web servers, databases, and caching tools, aiming to offer a seamless development experience. This Docker configuration is particularly beneficial for those looking to leverage Magento 2.4.x for building robust and secure e-commerce solutions.</p>
+  <img src="https://img.shields.io/badge/magento-2.X-brightgreen.svg?logo=magento&longCache=true" alt="Supported Magento Versions" />
+  <a href="https://hub.docker.com/r/intarmour/magento-php/" target="_blank"><img src="https://img.shields.io/docker/pulls/intarmour/magento-php.svg?label=php%20docker%20pulls" alt="Docker Hub Pulls - PHP" /></a>
+  <a href="https://hub.docker.com/r/intarmour/magento-nginx/" target="_blank"><img src="https://img.shields.io/docker/pulls/intarmour/magento-nginx.svg?label=nginx%20docker%20pulls" alt="Docker Hub Pulls - Nginx" /></a>
+  <a href="https://github.com/intarmour/docker-magento/graphs/commit-activity" target="_blank"><img src="https://img.shields.io/badge/maintained%3F-yes-brightgreen.svg" alt="Maintained - Yes" /></a>
+  <img src="https://img.shields.io/badge/apple%20silicon%20support-yes-brightgreen" alt="Apple Silicon Support" />
+  <a href="https://opensource.org/licenses/MIT" target="_blank"><img src="https://img.shields.io/badge/license-MIT-blue.svg" /></a>
 </div>
 
 ## Table of contents
