@@ -1,4 +1,4 @@
-FROM nginx:1.25.1-alpine
+FROM nginx:perl
 MAINTAINER Mark Shust <mark@shust.com>
 
 ARG APP_ID=1000
