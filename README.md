@@ -39,14 +39,14 @@ View Dockerfiles for the latest tags:
   - [`7.17`](images/elasticsearch/7.17)
   - [`8.4`,](images/elasticsearch/8.4)
 - [intarmour/magento-rabbitmq (Docker Hub)](https://hub.docker.com/r/intarmour/magento-rabbitmq/)
-  - [`3.9``](images/rabbitmq/3.9)
+  - [`3.9`](images/rabbitmq/3.9)
   - [`3.11`](images/rabbitmq/3.11)
 - [intarmour/ssh (Docker Hub)](https://hub.docker.com/r/intarmour/magento-ssh/)
   - [`latest`](images/ssh)
 
 ## Usage
 
-This configuration is intended to be used as a Docker-based development environment for Magento 2.4.x.
+This configuration is intended to be used as a Docker-based production environment for Magento 2.4.x.
 
 Folders:
 
