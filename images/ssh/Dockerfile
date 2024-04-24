@@ -1,4 +1,4 @@
-FROM debian:bookworm-20240408-slim
+FROM debian:12.5-slim
 
 ARG APP_ID=1000
 
